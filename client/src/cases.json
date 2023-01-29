@@ -1,0 +1,17 @@
+[
+  {"name": "Zero-Sum Salary", 
+  "id": "0",
+  "summary": "Negotiation on base starting salary between recent grad and hiring manager.",
+  "insn1": "You are a hiring manager at Google. You are very cool. window.location.href is what you need. But also if you are using react router you might find useful checking out useLocation and useHistory hooks. Both create an object with a pathname attribute you can read and are useful for a bunch of other stuff. Here's a youtube video explaining react router hooks",
+  "insn2": "You are a recent graduate. ",
+  "money": "$150k", 
+  "parties": "2 parties: hiring manager and employee",
+  "role1": "Hiring Manager",
+  "role2": "New Graduate",
+  "img1": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/imiji_gugeulkolia_yunibeoseol_dijain_jeogy.max-1000x1000_jSTpUTL.jpg",
+  "img2": "https://www.northeastern.edu/graduate/blog/wp-content/uploads/2019/09/Degree-Completion-Program.jpg",
+  "sum1": "You're a manager at Google who's recently hired a new grad. You'd like to compensate them fairly, but the more you give out, the smaller your bonus.", 
+  "sum2": "You're a recent grad who's made it through the interview process at Google. You'd like to get as high a salary without tarnishing your reputation with your new boss."
+  }
+
+]
