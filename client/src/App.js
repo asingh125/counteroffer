@@ -4,6 +4,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import LoginPage from './components/LoginPage'
 import SignupPage from './components/SignupPage'
+import CasesPage from './components/CasesPage';
 
 
 function App() {
@@ -21,6 +22,8 @@ function App() {
     // fetch();
 
   }, []);
+
+
   return (
     <div className="App">
       <BrowserRouter>
@@ -28,6 +31,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/signup" element={<SignupPage />} />
+            <Route path="/cases" element={<CasesPage />} />
           </Routes>
       </BrowserRouter>
     </div>

@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Alert from 'react-bootstrap/Alert'
 
-const SignupPage = () => {
+const SignupPage = (props) => {
   const navigate = useNavigate()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
@@ -16,7 +16,7 @@ const SignupPage = () => {
   const onClick = () => {
     // Sign up API
 
-    const success = false
+    const success = false //hard-coded in for now
 
     // If response is 'username already exists': 
     if (!success) {

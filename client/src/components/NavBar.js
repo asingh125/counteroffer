@@ -25,8 +25,8 @@ const Component = () => {
         <Navbar.Collapse id="basic-navbar-nav" className="float-end">
         
           <Nav className="me-auto">
-            <Nav.Link href=""> Home </Nav.Link>
-            <Nav.Link href=""> Cases </Nav.Link>
+            <Nav.Link href="/"> Home </Nav.Link>
+            <Nav.Link href="/cases"> Cases </Nav.Link>
           </Nav>
               
           <Nav>
