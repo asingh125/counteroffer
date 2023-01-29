@@ -5,7 +5,6 @@ import Card from 'react-bootstrap/Card'
 import InstructionsTab from './InstructionsTab'
 import SendOfferTab from './SendOfferTab'
 import ReceiveOfferTab from './ReceiveOfferTab'
-import VideoChat from './VideoChat'
 
 
 const cases = require('../cases.json')
@@ -57,7 +56,7 @@ const GamePage = (props) => {
           }
 
           { selected === "1" ?
-            <VideoChat/>
+          <></>
             :
             <></>
           }
