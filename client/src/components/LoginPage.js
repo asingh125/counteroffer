@@ -1,22 +1,34 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-
+import { useNavigate } from 'react-router-dom';
+import axios from "axios"
+// import fs from 'fs';
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Alert from 'react-bootstrap/Alert';
+var userData = require("../db.json")
 
-const LoginPage = () => {
+
+
+const LoginPage = (props) => {
   const navigate = useNavigate()
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [displayAlert, setDisplayAlert] = useState(false)
 
-  const onClick = () => {
+  const onClick = async () => {
     // Log in API
-
-    const success = false //hard-coded in for now
+  //   const data = await axios.post('http://10.150.243.218:8000/api/token', JSON.stringify({
+  //     username: username,
+  //     password: password
+  //   }), {headers: {authorization: "http://10.150.243.218:8000"}}).then(res => {
+  //   console.log(res)
+  //   return (
+  //     res.data
+  //   )
+  // }).then((result) => {
+    const success = true //hard-coded in for now
 
     // If response is 'username already exists': 
     if (!success) {
@@ -26,10 +38,15 @@ const LoginPage = () => {
     // Else, sign up correctly and redirect to homepage
     else {
       // Log in API request
+      props.setUN(username)
+      // userData["USER"] = username
+      // fs.writeFile('db.json', JSON.stringify(userData), 'utf8');
       navigate('/')
     }
 
-  }
+  // })
+}
+
 
   return (
     <div style={{margin:"auto", width:"50%", padding:"10%"}}>

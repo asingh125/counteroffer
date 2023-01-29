@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button';
@@ -13,21 +14,27 @@ const SignupPage = (props) => {
   const [password, setPassword] = useState("")
   const [displayAlert, setDisplayAlert] = useState(false)
 
-  const onClick = () => {
+  const onClick = async () => {
     // Sign up API
+    // const data = await axios.post('http://10.150.243.219:3001/signup', JSON.stringify({
+    //       username: username, 
+    //       password: password
+    //     }), {headers:{"Content-Type" : "application/json"}}).then(res => {
+    //     console.log(res)
+    //     const success = true //hard-coded in for now
 
-    const success = false //hard-coded in for now
+    //     // If response is 'username already exists': 
+    //     if (!success) {
+    //       setDisplayAlert(true)
+    //     }
+    
+    //     // Else, sign up correctly and redirect to homepage
+    //     else {
+    //       // Log in API request
+    //       navigate('/')
+    //     }
 
-    // If response is 'username already exists': 
-    if (!success) {
-      setDisplayAlert(true)
-    }
-
-    // Else, sign up correctly and redirect to homepage
-    else {
-      // Log in API request
-      navigate('/')
-    }
+    //   });
 
   }
 
@@ -49,7 +56,7 @@ const SignupPage = (props) => {
             <br/>
 
             <Form.Group>
-              <FloatingLabel label="Username">
+              <FloatingLabel label="Password">
                 <Form.Control type="password" placeholder="Password" value={password} onChange={e => setPassword(e.target.value)}/>
               </FloatingLabel>
               {/* <Form.Label> <h6>Password</h6> </Form.Label> */}

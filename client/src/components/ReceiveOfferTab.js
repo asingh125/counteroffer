@@ -14,7 +14,7 @@ import SignatureCanvas from 'react-signature-canvas'
 
 
 const ReceiveOfferTab = () => {
-  const [offer, setOffer] = useState("")
+  const [offer, setOffer] = useState("75000")
   const [submitted, setSubmitted] = useState(false)
   const [displayAlert, setDisplayAlert] = useState(false)
 

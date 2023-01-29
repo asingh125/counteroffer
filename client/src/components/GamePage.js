@@ -5,6 +5,7 @@ import Card from 'react-bootstrap/Card'
 import InstructionsTab from './InstructionsTab'
 import SendOfferTab from './SendOfferTab'
 import ReceiveOfferTab from './ReceiveOfferTab'
+import VideoChat from './VideoChat'
 
 
 const cases = require('../cases.json')
@@ -29,7 +30,7 @@ const GamePage = (props) => {
 
 
   return (
-    <div style={{margin:"0 auto", width:"75%", padding:"5%", textAlign:"left"}}>
+    <div style={{margin:"0 auto", width:"90%", padding:"5%", textAlign:"left"}}>
       <Card style={{minHeight:"30em"}}>
         <Card.Header>
         <Nav variant="tabs" defaultActiveKey="0" onSelect={(key) => setSelected(key)} size="large">
@@ -56,7 +57,7 @@ const GamePage = (props) => {
           }
 
           { selected === "1" ?
-          <></>
+            <VideoChat room={room}/>
             :
             <></>
           }

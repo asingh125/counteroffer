@@ -13,6 +13,8 @@ import LandingPage from './components/LandingPage';
 
 function App() {
 
+  const [un, setUN] = useState(undefined)
+
   useEffect(() => {
 
     // Fetch the username from the cookie
@@ -31,13 +33,13 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <NavBar />
+        <NavBar un={un} setUN={setUN}/>
           <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/signup" element={<SignupPage />} />
-            <Route path="/cases" element={<CasesPage />} />
-            <Route path="/case/:cid/:rid" element={<GamePage />} />
+            <Route path="/" element={<HomePage un={un} setUN={setUN}/>} />
+            <Route path="/login" element={<LoginPage un={un} setUN={setUN}/>} />
+            <Route path="/signup" element={<SignupPage un={un} setUN={setUN}/>} />
+            <Route path="/cases" element={<CasesPage un={un} setUN={setUN}/>} />
+            <Route path="/case/:cid/:rid" element={<GamePage un={un} setUN={setUN}/>} />
           </Routes>
       </BrowserRouter>
     </div>

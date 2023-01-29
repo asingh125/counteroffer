@@ -6,9 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Button from 'react-bootstrap/Button';
 
-
-
-const Component = () => {
+const Component = (props) => {
   const navigate = useNavigate()
   const [username, setUsername] = useState("aarushi")
 
@@ -20,9 +18,9 @@ const Component = () => {
 
   return (
     <Navbar bg="light" expand="lg">
-        <Navbar.Brand href="">CounterOffer</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="float-end">
+        <Navbar.Brand style={{margin: "0 20px"}} href="">Ctr++Offer</Navbar.Brand>
+        <Navbar.Toggle style={{margin: "0 5px"}} aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse style={{margin: "0 5px"}} id="basic-navbar-nav" className="float-end">
         
           <Nav className="me-auto">
             <Nav.Link href="/"> Home </Nav.Link>
@@ -30,8 +28,13 @@ const Component = () => {
           </Nav>
               
           <Nav>
-            <Navbar.Text>Hi {username}</Navbar.Text>
-            <Nav.Item><Button onClick={logOut}>Log Out</Button></Nav.Item>
+            {
+              props.un ? 
+                <Navbar.Text style={{margin: "0 5px"}}>Hello {props.un}</Navbar.Text>
+              :
+              <></>
+            }
+            <Nav.Item style={{margin: "0 5px"}}><Button onClick={logOut}>Login Page</Button></Nav.Item>
           </Nav>
 
         </Navbar.Collapse>
