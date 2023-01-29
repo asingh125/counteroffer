@@ -19,7 +19,8 @@ const InstructionsTab = (props) => {
     const id = uuidv4()
     console.log(id)
     // Send API request to join room
-    setCode(id)
+    props.setRoom(id)
+    setModalOpen(false)
   }
 
   return (
@@ -39,11 +40,23 @@ const InstructionsTab = (props) => {
       {
         props.room.length === 0 ? 
           <div>
-            <Button onClick={() => setModalOpen(true)}>Start Game</Button>
+            <Button onClick={() => setModalOpen(true)}>Play Game</Button>
           </div>
-
         :
-          <></>
+          <div>
+            <Alert>
+              <h6>
+              Game code: 
+              </h6>
+              <h5>
+                {props.room} 
+              </h5>
+              <i>
+              (share this with a friend!)
+              </i>
+            </Alert>
+            
+          </div>
       }
     </div>
 
@@ -56,17 +69,6 @@ const InstructionsTab = (props) => {
             <Row style={{width:"90%"}}>
                 <h4>Create new game</h4>
                 <Button onClick={generateRoom}>Create game</Button>
-                {code.length === 0 ?
-                  <></>
-                  :
-                  <Alert>
-                    Game code: 
-                    <br/>
-                    {code} 
-                    <br/>
-                    (share this with your friends)
-                  </Alert>
-                }
             </Row>
             <br/>
             <hr/>

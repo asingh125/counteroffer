@@ -32,7 +32,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/login" element={<LoginPage />} />

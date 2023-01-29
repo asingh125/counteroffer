@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'
 import Nav from 'react-bootstrap/Nav'
 import Card from 'react-bootstrap/Card'
-import InstructionsTab from './InstructionsTab';
-
+import InstructionsTab from './InstructionsTab'
+import SendOfferTab from './SendOfferTab'
+import ReceiveOfferTab from './ReceiveOfferTab'
+import VideoChat from './VideoChat'
 
 
 const cases = require('../cases.json')
@@ -27,11 +29,9 @@ const GamePage = (props) => {
   }, []);
 
 
-
-
   return (
     <div style={{margin:"0 auto", width:"75%", padding:"5%", textAlign:"left"}}>
-      <Card>
+      <Card style={{minHeight:"30em"}}>
         <Card.Header>
         <Nav variant="tabs" defaultActiveKey="0" onSelect={(key) => setSelected(key)} size="large">
           <Nav.Item>
@@ -43,7 +43,7 @@ const GamePage = (props) => {
           </Nav.Item>
 
           <Nav.Item>
-            <Nav.Link eventKey="2" disabled={room.length === 0}>Contract</Nav.Link>
+            <Nav.Link eventKey="2" disabled={room.length === 0}>Offer</Nav.Link>
           </Nav.Item>
 
         </Nav>
@@ -57,13 +57,16 @@ const GamePage = (props) => {
           }
 
           { selected === "1" ?
-            <></>
+            <VideoChat/>
             :
             <></>
           }
 
           { selected === "2" ?
-            <></>
+            rid === "1" ? 
+            <SendOfferTab />
+            :
+            <ReceiveOfferTab />
             :
             <></>
           }
